@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7979271566417376093}
   - component: {fileID: 7621480677979479353}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: BuildingTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1125,10 +1125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6fdccbc18b14419f63eff3d439fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinsAmount: {fileID: 0}
+  buildingName: {fileID: 7621480677979479353}
   currentLevel: {fileID: 7826602394371300729}
   nextLevel: {fileID: 7826602395380748729}
   progressBar: {fileID: 7826602394040742742}
   upgradePrice: {fileID: 3603654800758869255}
+  upgradeBtn: {fileID: 7826602394670403303}
 --- !u!1 &7826602396004791992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,7 +1221,7 @@ GameObject:
   - component: {fileID: 3609983313608160936}
   - component: {fileID: 2037320898466956125}
   m_Layer: 0
-  m_Name: Building Name
+  m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

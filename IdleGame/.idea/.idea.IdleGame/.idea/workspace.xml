@@ -28,13 +28,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Popup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/RedBuilding.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Scripts/BlueBuilding.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/BuildingStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/BuildingStats.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/BlueBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/RedBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/YellowBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Popup.cs" />
       </list>
     </option>
   </component>
@@ -46,6 +54,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -62,10 +72,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22620">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="22620" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -82,7 +92,7 @@
       <updated>1638489857082</updated>
       <workItem from="1638489873884" duration="30130000" />
       <workItem from="1638520962485" duration="14574000" />
-      <workItem from="1638781006670" duration="292000" />
+      <workItem from="1638781006670" duration="15343000" />
     </task>
     <servers />
   </component>
@@ -107,6 +117,38 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1638803558529">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1638803558529" />
+    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1638803558529">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1638803558529" />
+    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1638803558528">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1638803558528" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1638803558529">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1638803558529" />
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1638803568794">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1638803568794" />
+    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1638803568794">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1638803568794" />
+    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1638803568794">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1638803568794" />
+    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1638803568794">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1638803568794" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1638520971644">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
