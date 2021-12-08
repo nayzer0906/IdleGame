@@ -30,9 +30,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Popup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/CustomerManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Customer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/RedBuilding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/241D6641-D420-412E-BA26-F5151C5D40E9/7e/22afd15d/NavMeshAgent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/CoinsManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/NPCManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -40,7 +42,6 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/BuildingStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/NPCManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/BlueBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/YellowBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Building.cs" />
@@ -49,6 +50,11 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/RedBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/CoinsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Popup.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/NPCManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/NPCPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/CustomerPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/CustomerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Customer.cs" />
       </list>
     </option>
   </component>
@@ -98,7 +104,7 @@
       <updated>1638489857082</updated>
       <workItem from="1638489873884" duration="30130000" />
       <workItem from="1638520962485" duration="14574000" />
-      <workItem from="1638781006670" duration="31186000" />
+      <workItem from="1638781006670" duration="39644000" />
     </task>
     <servers />
   </component>
@@ -191,5 +197,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1638520971644" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1638972197093">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1638972197093" />
   </component>
 </project>

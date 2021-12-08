@@ -18,8 +18,6 @@ public class Popup : MonoBehaviour
     private void Awake()
     {
         upgradeBtn.onClick.AddListener(UpgradeBuilding);
-        currentLevel.text = "1";
-        nextLevel.text = "2";
     }
 
     public void SetBuildingInfo(Building building)
