@@ -58,6 +58,7 @@ public class Popup : MonoBehaviour
         {
             selectedBuilding.currentLevel++;
             selectedBuilding.nextLevel++;
+            selectedBuilding.upgradePrice *= 2;
             
             progressBar.value = progressBar.minValue;
             selectedBuilding.progressBar = progressBar.minValue;
@@ -65,5 +66,6 @@ public class Popup : MonoBehaviour
 
         currentLevel.text = selectedBuilding.currentLevel.ToString();
         nextLevel.text = selectedBuilding.nextLevel.ToString();
+        upgradePrice.text = selectedBuilding.upgradePrice.ToString();
     }
 }

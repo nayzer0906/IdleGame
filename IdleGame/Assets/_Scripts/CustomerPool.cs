@@ -6,7 +6,7 @@ using UnityEngine;
 public class CustomerPool : MonoBehaviour
 {
     public static CustomerPool instance;
-    private List<GameObject> pooledCustomers = new List<GameObject>();
+    private List<Customer> pooledCustomers = new List<Customer>();
     private int customerAmount = 9;
     [SerializeField] private GameObject customerPrefab;
 
@@ -21,16 +21,17 @@ public class CustomerPool : MonoBehaviour
         for (int i = 0; i < customerAmount; i++)
         {
             var customerObj = Instantiate(customerPrefab);
+            var customerCs = customerObj.GetComponent<Customer>();
             customerObj.SetActive(false);
-            pooledCustomers.Add(customerObj);
+            pooledCustomers.Add(customerCs);
         }
     }
 
-    public GameObject GetPooledCustomer()
+    public Customer GetPooledCustomer()
     {
         for (int i = 0; i < pooledCustomers.Count; i++)
         {
-            if (!pooledCustomers[i].activeInHierarchy)
+            if (!pooledCustomers[i].gameObject.activeInHierarchy)
                 return pooledCustomers[i];
         }
 
