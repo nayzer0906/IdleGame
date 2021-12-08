@@ -10,5 +10,8 @@ public class BlueBuilding : Building
         income = 100;
         upgradePrice = 200;
         upgradeLevel = 600;
+        progressBar = 0;
+        currentLevel = 1;
+        nextLevel = 2;
     }
 }

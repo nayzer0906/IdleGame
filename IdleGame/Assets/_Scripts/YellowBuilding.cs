@@ -10,5 +10,8 @@ public class YellowBuilding : Building
         income = 10;
         upgradePrice = 50;
         upgradeLevel = 250;
+        progressBar = 0;
+        currentLevel = 1;
+        nextLevel = 2;
     }
 }

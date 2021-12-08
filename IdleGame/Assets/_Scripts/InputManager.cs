@@ -31,9 +31,9 @@ public class InputManager : MonoBehaviour
         popup.gameObject.SetActive(val);
     }
 
-    private void GetBuilding(string name, int income, int upgradePrice, int upgradeLevel)
+    private void GetBuilding(Building building)
     {
-        popupClass.SetBuildingInfo(name, income, upgradePrice, upgradeLevel);
+        popupClass.SetBuildingInfo(building);
     }
 
     private void TouchInput()
@@ -50,11 +50,11 @@ public class InputManager : MonoBehaviour
                     RaycastHit hit;
                     if (Physics.Raycast(ray, out hit) && !EventSystem.current.IsPointerOverGameObject(touch.fingerId))
                     {
-                        var building = hit.transform.GetComponent<Building>();
+                        var building = hit.transform.CompareTag("Building");
                         if (building)
                         {
                             OpenPopup(true);
-                            GetBuilding(building.name, building.income, building.upgradePrice, building.upgradeLevel);
+                            GetBuilding(hit.transform.GetComponent<Building>());
                         }
                         else
                         {
@@ -74,11 +74,11 @@ public class InputManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit) && !EventSystem.current.IsPointerOverGameObject())
             {
-                var building = hit.transform.GetComponent<Building>();
+                var building = hit.transform.CompareTag("Building");
                 if (building)
                 {
                     OpenPopup(true);
-                    GetBuilding(building.name, building.income, building.upgradePrice, building.upgradeLevel);
+                    GetBuilding(hit.transform.GetComponent<Building>());
                 }
                 else
                 {

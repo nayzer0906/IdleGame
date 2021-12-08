@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 public class Popup : MonoBehaviour
 {
-    [SerializeField] private TMP_Text coinsAmount;
     [SerializeField] private TMP_Text buildingName;
     [SerializeField] private TMP_Text currentLevel;
     [SerializeField] private TMP_Text nextLevel;
     [SerializeField] private Slider progressBar;
     [SerializeField] private TMP_Text upgradePrice;
     [SerializeField] private Button upgradeBtn;
+    private Building selectedBuilding;
 
     private void Awake()
     {
@@ -22,10 +22,14 @@ public class Popup : MonoBehaviour
         nextLevel.text = "2";
     }
 
-    public void SetBuildingInfo(string name, int income, int upgradePrice, int upgradeLevel)
+    public void SetBuildingInfo(Building building)
     {
-        buildingName.text = name;
-        this.upgradePrice.text = upgradePrice.ToString();
+        selectedBuilding = building;
+        buildingName.text = building.name;
+        this.upgradePrice.text = building.upgradePrice.ToString();
+        this.progressBar.value = building.progressBar;
+        this.currentLevel.text = building.currentLevel.ToString();
+        this.nextLevel.text = building.nextLevel.ToString();
     }
 
     private void UpgradeBuilding()
@@ -40,32 +44,28 @@ public class Popup : MonoBehaviour
 
     private void DecrementCoinsAmount()
     {
-        var _coinsAmount = Convert.ToInt32(coinsAmount.text);
-        var _upgradePrice = Convert.ToInt32(upgradePrice.text);
-        
-        _coinsAmount -= _upgradePrice;
-        if (_coinsAmount < 0)
+        if (CoinsManager.Instance.GetCoinsAmount() - selectedBuilding.upgradePrice < 0)
             return;
         
-        coinsAmount.text = _coinsAmount.ToString();
+        CoinsManager.Instance.OnCoinsChanged?.Invoke(-selectedBuilding.upgradePrice);
         IncreaseProgressBar();
     }
 
     private void IncreaseProgressBar()
     {
+        selectedBuilding.progressBar += 0.1f;
         progressBar.value += 0.1f;
-        
-        var _currentLevel = Convert.ToInt32(currentLevel.text);
-        var _nextLevel = Convert.ToInt32(nextLevel.text);
-        
+
         if (progressBar.value >= progressBar.maxValue)
         {
-            _currentLevel++;
-            _nextLevel++;
+            selectedBuilding.currentLevel++;
+            selectedBuilding.nextLevel++;
+            
             progressBar.value = progressBar.minValue;
+            selectedBuilding.progressBar = progressBar.minValue;
         }
 
-        currentLevel.text = _currentLevel.ToString();
-        nextLevel.text = _nextLevel.ToString();
+        currentLevel.text = selectedBuilding.currentLevel.ToString();
+        nextLevel.text = selectedBuilding.nextLevel.ToString();
     }
 }

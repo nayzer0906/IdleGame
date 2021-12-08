@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 2b74f524f982a934fa353ff799df3bf4, type: 2}
 --- !u!1 &11938228
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 445707942}
   - component: {fileID: 445707941}
+  - component: {fileID: 445707943}
   m_Layer: 0
   m_Name: Application
   m_TagString: Untagged
@@ -343,6 +344,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &445707943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445707940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa3d4a03a484224aa2b9b3874e0c129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsDisplay: {fileID: 138858547}
 --- !u!1 &465344205
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +374,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &465344206
 MeshCollider:
@@ -452,7 +466,7 @@ GameObject:
   - component: {fileID: 468181667}
   m_Layer: 0
   m_Name: Yellow
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -547,6 +561,9 @@ MonoBehaviour:
   income: 0
   upgradePrice: 0
   upgradeLevel: 0
+  progressBar: 0
+  currentLevel: 0
+  nextLevel: 0
 --- !u!1 &564531512
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,8 +576,10 @@ GameObject:
   - component: {fileID: 564531515}
   - component: {fileID: 564531514}
   - component: {fileID: 564531513}
+  - component: {fileID: 564531518}
+  - component: {fileID: 564531517}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,6 +660,42 @@ Transform:
   m_Father: {fileID: 230872449}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &564531517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564531512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f18a27b6188d344996914b4bb9a433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingPosition: {fileID: 1483175161}
+  spawnPosition: {fileID: 11938229}
+--- !u!195 &564531518
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564531512}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &584033886
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +710,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &584033887
 Transform:
@@ -844,7 +899,7 @@ GameObject:
   - component: {fileID: 829023070}
   m_Layer: 0
   m_Name: Blue
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -939,6 +994,9 @@ MonoBehaviour:
   income: 0
   upgradePrice: 0
   upgradeLevel: 0
+  progressBar: 0
+  currentLevel: 0
+  nextLevel: 0
 --- !u!224 &846255291 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6818288877204563320, guid: e16b56f67af3eb041bfcd0c6f843bc2c,
@@ -1117,7 +1175,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483175157}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1199,6 +1257,9 @@ MonoBehaviour:
   income: 0
   upgradePrice: 0
   upgradeLevel: 0
+  progressBar: 0
+  currentLevel: 0
+  nextLevel: 0
 --- !u!1 &1522216356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,7 +1676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001493973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: -0.5, z: -12}
+  m_LocalPosition: {x: 8, y: 0, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 230872449}
@@ -1823,6 +1884,11 @@ PrefabInstance:
       propertyPath: coinsAmount
       value: 
       objectReference: {fileID: 138858547}
+    - target: {fileID: 1155675874994133270, guid: 49d8e0ebf15d5d44ea9076db0de42072,
+        type: 3}
+      propertyPath: _redBuilding
+      value: 
+      objectReference: {fileID: 1483175162}
     - target: {fileID: 3603654801114805116, guid: 49d8e0ebf15d5d44ea9076db0de42072,
         type: 3}
       propertyPath: m_IsActive
