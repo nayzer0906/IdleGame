@@ -51,9 +51,9 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/NPCManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/NPCPool.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Popup.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/CoinsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/CustomerPool.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/CustomerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/CoinsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Customer.cs" />
       </list>
     </option>

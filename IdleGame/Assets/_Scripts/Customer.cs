@@ -30,9 +30,9 @@ public class Customer : MonoBehaviour
         navMeshAgent.SetDestination(dest);
     }
 
-    public void Buy()
+    public void Buy(Building selectedBuilding)
     {
-        CoinsManager.Instance.OnCoinsChanged?.Invoke(50);
+        CoinsManager.Instance.OnCoinsChanged?.Invoke(selectedBuilding.income);
         isOnWayBack = true;
         Move(spawnPoint.position);
     }
@@ -46,7 +46,10 @@ public class Customer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Building")
-            Buy();
+        {
+            var selectedBuilding = other.gameObject.GetComponent<Building>();
+            Buy(selectedBuilding);
+        }
 
         if (other.gameObject.tag == "SpawnPoint" && isOnWayBack)
             Unload();
