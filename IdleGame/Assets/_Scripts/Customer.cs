@@ -45,10 +45,10 @@ public class Customer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Building")
+        var building = other.gameObject.GetComponent<Building>();
+        if (building)
         {
-            var selectedBuilding = other.gameObject.GetComponent<Building>();
-            Buy(selectedBuilding);
+            Buy(building);
         }
 
         if (other.gameObject.tag == "SpawnPoint" && isOnWayBack)

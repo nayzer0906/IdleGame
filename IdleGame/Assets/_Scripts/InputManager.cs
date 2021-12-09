@@ -50,11 +50,11 @@ public class InputManager : MonoBehaviour
                     RaycastHit hit;
                     if (Physics.Raycast(ray, out hit) && !EventSystem.current.IsPointerOverGameObject(touch.fingerId))
                     {
-                        var building = hit.transform.CompareTag("Building");
+                        var building = hit.transform.GetComponent<Building>();
                         if (building)
                         {
                             OpenPopup(true);
-                            GetBuilding(hit.transform.GetComponent<Building>());
+                            GetBuilding(building);
                         }
                         else
                         {
@@ -74,11 +74,11 @@ public class InputManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit) && !EventSystem.current.IsPointerOverGameObject())
             {
-                var building = hit.transform.CompareTag("Building");
+                var building = hit.transform.GetComponent<Building>();
                 if (building)
                 {
                     OpenPopup(true);
-                    GetBuilding(hit.transform.GetComponent<Building>());
+                    GetBuilding(building);
                 }
                 else
                 {

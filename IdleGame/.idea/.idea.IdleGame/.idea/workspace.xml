@@ -45,7 +45,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/BlueBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/YellowBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Building.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Singleton.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/RedBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/NPCManager.cs" />
@@ -54,6 +53,7 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/CustomerPool.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/CustomerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/CoinsManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Customer.cs" />
       </list>
     </option>

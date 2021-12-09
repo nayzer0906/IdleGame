@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 468181667}
   m_Layer: 0
   m_Name: Yellow
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -858,7 +858,7 @@ GameObject:
   - component: {fileID: 829023070}
   m_Layer: 0
   m_Name: Blue
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1165,7 +1165,7 @@ GameObject:
   - component: {fileID: 1483175162}
   m_Layer: 0
   m_Name: Red
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
