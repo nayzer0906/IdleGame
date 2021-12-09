@@ -5,45 +5,57 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-public class CustomerManager : MonoBehaviour
+public class CustomerManager : Singleton<CustomerManager>
 {
-   [SerializeField] private Transform buildingPosition;
-   [SerializeField] private Transform[] spawnPositions;
-   private bool goToSpawn;
+    public List<Transform> spawnPoints = new List<Transform>();
+    public List<Transform> destinations = new List<Transform>();
+    private int currentCustomersAmount = 0;
+    private int customersAmountLimit = 6;
 
-   private void Awake()
-   {
-      
-   }
+    private void Awake()
+    {
+        CustomerPool.Instance.onPoolCreated += () =>
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                SpawnCustomer();
+            }
+            StartCoroutine(Spawning());
+        };
+    }
 
-   void Update()
-   {
-      MoveCustomer();
-   }
+    private void SpawnCustomer()
+    {
+        var customer = CustomerPool.Instance.GetPooledCustomer();
 
-   private void OnTriggerEnter(Collider other)
-   {
-       if(other.gameObject.tag == "Building")
-        goToSpawn = true;
-   }
+        if (customer != null)
+        {
+            var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
+            var destination = destinations[Random.Range(0, destinations.Count)];
 
-   private void MoveCustomer()
-   {
-      var customer = CustomerPool.instance.GetPooledCustomer();
-      if (customer != null)
-      {
-         customer.transform.position = spawnPositions[Random.Range(0, spawnPositions.Length)].position;
-         customer.gameObject.SetActive(true);
-      }
+            customer.gameObject.SetActive(true);
+            customer.Init(spawnPoint, destination);
+        }
+    }
 
-      // var customerAI = customer.GetComponent<NavMeshAgent>();
-      // if (!goToSpawn)
-      // {
-      //    customerAI.destination = buildingPosition.position;
-      // }
-      // else
-      // {
-      //    customerAI.destination = spawnPosition.position;
-      // }
-   }
+    public void SetCustomersAmount(int val)
+    {
+        currentCustomersAmount += val;
+    }
+
+    public IEnumerator Spawning()
+    {
+        while (true)
+        {
+            if (currentCustomersAmount >= customersAmountLimit)
+            {
+                yield return new WaitForSeconds(3.0f);
+                continue;
+            }
+
+            SpawnCustomer();
+            yield return new WaitForSeconds(3.0f);
+
+        }
+    }
 }
