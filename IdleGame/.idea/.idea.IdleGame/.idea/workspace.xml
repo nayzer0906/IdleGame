@@ -42,19 +42,19 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/BuildingStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/BlueBuilding.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/YellowBuilding.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Singleton.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/RedBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/NPCManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/NPCPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Popup.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/CustomerPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/CustomerManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/CoinsManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Customer.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/CustomerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/YellowBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/RedBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/BlueBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/CoinsManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Popup.cs" />
       </list>
     </option>
   </component>
@@ -197,9 +197,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1638520971644" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1638972197093">
+    <state x="638" y="76" width="644" height="888" key="find.popup" timestamp="1639046904933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1638972197093" />
+    <state x="638" y="76" width="644" height="888" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639046904933" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1639040057048">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639040057048" />
   </component>
 </project>

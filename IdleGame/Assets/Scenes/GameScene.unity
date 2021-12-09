@@ -607,7 +607,6 @@ MonoBehaviour:
   name: 
   income: 0
   upgradePrice: 0
-  upgradeLevel: 0
   progressBar: 0
   currentLevel: 0
   nextLevel: 0
@@ -952,7 +951,6 @@ MonoBehaviour:
   name: 
   income: 0
   upgradePrice: 0
-  upgradeLevel: 0
   progressBar: 0
   currentLevel: 0
   nextLevel: 0
@@ -1259,7 +1257,6 @@ MonoBehaviour:
   name: 
   income: 0
   upgradePrice: 0
-  upgradeLevel: 0
   progressBar: 0
   currentLevel: 0
   nextLevel: 0

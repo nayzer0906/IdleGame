@@ -51,7 +51,7 @@ public class Customer : MonoBehaviour
             Buy(building);
         }
 
-        if (other.gameObject.tag == "SpawnPoint" && isOnWayBack)
+        if (other.CompareTag("SpawnPoint") && isOnWayBack)
             Unload();
 
     }
