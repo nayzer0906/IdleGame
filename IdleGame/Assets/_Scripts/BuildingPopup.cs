@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Popup : MonoBehaviour
+public class BuildingPopup : Singleton<BuildingPopup>
 {
     [SerializeField] private TMP_Text buildingName;
     [SerializeField] private TMP_Text currentLevel;
@@ -20,7 +20,7 @@ public class Popup : MonoBehaviour
         upgradeBtn.onClick.AddListener(UpgradeBuilding);
     }
 
-    public void SetBuildingInfo(Building building)
+    public void DisplayBuildingInfo(Building building)
     {
         selectedBuilding = building;
         buildingName.text = building.name;
@@ -35,10 +35,6 @@ public class Popup : MonoBehaviour
         DecrementCoinsAmount();
     }
 
-    private void UpgradeLevel()
-    {
-        
-    }
 
     private void DecrementCoinsAmount()
     {

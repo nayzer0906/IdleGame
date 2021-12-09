@@ -6,14 +6,8 @@ using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private Transform popup;
-    private Popup popupClass;
-
-    private void Awake()
-    {
-        popupClass = popup.GetComponent<Popup>();
-    }
-
+    [SerializeField] private Transform popupPrefab;
+   
     private void Update()
     {
         if (Input.touchSupported)
@@ -28,12 +22,25 @@ public class InputManager : MonoBehaviour
 
     private void OpenPopup(bool val)
     {
-        popup.gameObject.SetActive(val);
+        popupPrefab.gameObject.SetActive(val);
     }
 
-    private void GetBuilding(Building building)
+    private void ShootRaycast(Ray ray)
     {
-        popupClass.SetBuildingInfo(building);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            var building = hit.transform.GetComponent<Building>();
+            if (building)
+            {
+                OpenPopup(true);
+                BuildingPopup.Instance.DisplayBuildingInfo(building);
+            }
+            else
+            {
+                OpenPopup(false);
+            }
+        }
     }
 
     private void TouchInput()
@@ -46,21 +53,10 @@ public class InputManager : MonoBehaviour
                 var touch = Input.GetTouch(i);
                 if (touch.phase == TouchPhase.Began)
                 {
-                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                    RaycastHit hit;
-                    if (Physics.Raycast(ray, out hit) && !EventSystem.current.IsPointerOverGameObject(touch.fingerId))
-                    {
-                        var building = hit.transform.GetComponent<Building>();
-                        if (building)
-                        {
-                            OpenPopup(true);
-                            GetBuilding(building);
-                        }
-                        else
-                        {
-                            OpenPopup(false);
-                        }
-                    }
+                    if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                        return;
+
+                    ShootRaycast(Camera.main.ScreenPointToRay(touch.position));
                 }
             }
         }
@@ -70,21 +66,10 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit) && !EventSystem.current.IsPointerOverGameObject())
-            {
-                var building = hit.transform.GetComponent<Building>();
-                if (building)
-                {
-                    OpenPopup(true);
-                    GetBuilding(building);
-                }
-                else
-                {
-                    OpenPopup(false);
-                }
-            }
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            ShootRaycast(Camera.main.ScreenPointToRay(Input.mousePosition));
         }
     }
 }
