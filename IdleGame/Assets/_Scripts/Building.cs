@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Building : MonoBehaviour
+public class Building : Singleton<Building>
 {
     public string name;
     public int income;

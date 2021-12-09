@@ -7,27 +7,27 @@ using UnityEngine.UI;
 
 public class BuildingPopup : Singleton<BuildingPopup>
 {
-    [SerializeField] private TMP_Text buildingName;
-    [SerializeField] private TMP_Text currentLevel;
-    [SerializeField] private TMP_Text nextLevel;
-    [SerializeField] private Slider progressBar;
-    [SerializeField] private TMP_Text upgradePrice;
-    [SerializeField] private Button upgradeBtn;
+    [SerializeField] private TMP_Text buildingNameUI;
+    [SerializeField] private TMP_Text currentLevelUI;
+    [SerializeField] private TMP_Text nextLevelUI;
+    [SerializeField] private Slider progressBarUI;
+    [SerializeField] private TMP_Text upgradePriceUI;
+    [SerializeField] private Button upgradeButtonUI;
     private Building selectedBuilding;
 
     private void Awake()
     {
-        upgradeBtn.onClick.AddListener(UpgradeBuilding);
+        upgradeButtonUI.onClick.AddListener(UpgradeBuilding);
     }
 
     public void DisplayBuildingInfo(Building building)
     {
         selectedBuilding = building;
-        buildingName.text = building.name;
-        this.upgradePrice.text = building.upgradePrice.ToString();
-        this.progressBar.value = building.progressBar;
-        this.currentLevel.text = building.currentLevel.ToString();
-        this.nextLevel.text = building.nextLevel.ToString();
+        buildingNameUI.text = building.name;
+        upgradePriceUI.text = building.upgradePrice.ToString();
+        progressBarUI.value = building.progressBar;
+        currentLevelUI.text = building.currentLevel.ToString();
+        nextLevelUI.text = building.nextLevel.ToString();
     }
 
     private void UpgradeBuilding()
@@ -47,21 +47,41 @@ public class BuildingPopup : Singleton<BuildingPopup>
 
     private void IncreaseProgressBar()
     {
-        selectedBuilding.progressBar += 0.1f;
-        progressBar.value += 0.1f;
+        progressBarUI.value += 0.2f;
+        selectedBuilding.progressBar += progressBarUI.value;    
 
-        if (progressBar.value >= progressBar.maxValue)
-        {
-            selectedBuilding.currentLevel++;
-            selectedBuilding.nextLevel++;
-            selectedBuilding.upgradePrice *= 2;
-            
-            progressBar.value = progressBar.minValue;
-            selectedBuilding.progressBar = progressBar.minValue;
+        if (progressBarUI.value >= progressBarUI.maxValue)
+        {          
+            UpgradeLevel(ref selectedBuilding.currentLevel, ref selectedBuilding.nextLevel);           
+            IncreasePrice(ref selectedBuilding.upgradePrice);                      
+            ResetProgressBar(progressBarUI);
+
+            selectedBuilding.progressBar = progressBarUI.value;
         }
 
-        currentLevel.text = selectedBuilding.currentLevel.ToString();
-        nextLevel.text = selectedBuilding.nextLevel.ToString();
-        upgradePrice.text = selectedBuilding.upgradePrice.ToString();
+        ConvertToUI(selectedBuilding.currentLevel, currentLevelUI);
+        ConvertToUI(selectedBuilding.nextLevel, nextLevelUI);
+        ConvertToUI(selectedBuilding.upgradePrice, upgradePriceUI);
+    }
+
+    private void UpgradeLevel(ref int currentLevel, ref int nextLevel)
+    {
+        currentLevel++;
+        nextLevel++;
+    }
+
+    private void IncreasePrice(ref int price)
+    {
+        price *= 2;
+    }
+
+    private void ResetProgressBar(Slider progressBar)
+    {
+        progressBar.value = progressBar.minValue;
+    }
+
+    private void ConvertToUI(int number, TMP_Text text)
+    {
+        text.text = number.ToString();            
     }
 }

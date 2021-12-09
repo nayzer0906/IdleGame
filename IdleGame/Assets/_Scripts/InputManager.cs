@@ -7,6 +7,9 @@ using UnityEngine.EventSystems;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private Transform popupPrefab;
+    private Camera cam;
+
+    private void Awake() => cam = Camera.main;
    
     private void Update()
     {
@@ -56,7 +59,7 @@ public class InputManager : MonoBehaviour
                     if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
                         return;
 
-                    ShootRaycast(Camera.main.ScreenPointToRay(touch.position));
+                    ShootRaycast(cam.ScreenPointToRay(touch.position));
                 }
             }
         }
@@ -69,7 +72,7 @@ public class InputManager : MonoBehaviour
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
-            ShootRaycast(Camera.main.ScreenPointToRay(Input.mousePosition));
+            ShootRaycast(cam.ScreenPointToRay(Input.mousePosition));
         }
     }
 }
