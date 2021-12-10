@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Customer : MonoBehaviour
 {
     private Transform spawnPoint;
@@ -22,19 +23,19 @@ public class Customer : MonoBehaviour
         destination = dest;
         isOnWayBack = false;
         transform.position = spawnPoint.position;
-        Move(destination.position);
+        MoveTowards(destination.position);
     }
 
-    public void Move(Vector3 dest)
+    public void MoveTowards(Vector3 dest)
     {
         navMeshAgent.SetDestination(dest);
     }
 
-    public void Buy(Building selectedBuilding)
+    public void MakePurchase(Building selectedBuilding)
     {
         CoinsManager.Instance.OnCoinsChanged?.Invoke(selectedBuilding.income);
         isOnWayBack = true;
-        Move(spawnPoint.position);
+        MoveTowards(spawnPoint.position);
     }
 
     private void Unload()
@@ -48,11 +49,10 @@ public class Customer : MonoBehaviour
         var building = other.gameObject.GetComponent<Building>();
         if (building)
         {
-            Buy(building);
+            MakePurchase(building);
         }
 
         if (other.CompareTag("SpawnPoint") && isOnWayBack)
             Unload();
-
     }
 }

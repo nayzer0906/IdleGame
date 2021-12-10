@@ -16,7 +16,7 @@ public class CustomerManager : Singleton<CustomerManager>
     {
         CustomerPool.Instance.onPoolCreated += () =>
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < customersAmountLimit; i++)
             {
                 SpawnCustomer();
             }
@@ -47,15 +47,15 @@ public class CustomerManager : Singleton<CustomerManager>
     {
         while (true)
         {
+            var wait = new WaitForSeconds(3.0f);
             if (currentCustomersAmount >= customersAmountLimit)
             {
-                yield return new WaitForSeconds(3.0f);
+                yield return wait;
                 continue;
             }
 
             SpawnCustomer();
-            yield return new WaitForSeconds(3.0f);
-
+            yield return wait;
         }
     }
 }

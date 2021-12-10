@@ -7,17 +7,18 @@ using UnityEngine;
 public class CoinsManager : Singleton<CoinsManager>
 {
     private int coins = 1000;
-    [SerializeField] private TMP_Text coinsDisplay;
+    [SerializeField] private TMP_Text coinsUI;
     public Action<int> OnCoinsChanged;
 
     private void Awake()
     {
+        DisplayCoinsAmount();
         OnCoinsChanged += SetCoinsAmount;
     }
 
     private void DisplayCoinsAmount()
     {
-        coinsDisplay.text = coins.ToString();
+        coinsUI.text = coins.ToString();
     }
 
     private void SetCoinsAmount(int val)
