@@ -7,12 +7,12 @@
         <e p="_Scripts" t="Include">
           <e p="BlueBuilding.cs" t="Include" />
           <e p="Building.cs" t="Include" />
+          <e p="BuildingPopup.cs" t="Include" />
           <e p="CoinsManager.cs" t="Include" />
           <e p="Customer.cs" t="Include" />
           <e p="CustomerManager.cs" t="Include" />
           <e p="CustomerPool.cs" t="Include" />
           <e p="InputManager.cs" t="Include" />
-          <e p="Popup.cs" t="Include" />
           <e p="RedBuilding.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
           <e p="YellowBuilding.cs" t="Include" />

@@ -29,7 +29,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Popup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/CustomerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Customer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/RedBuilding.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,6 +54,7 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Popup.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/BuildingPopup.cs" />
       </list>
     </option>
   </component>
@@ -84,10 +84,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22620">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="22620" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -105,6 +105,8 @@
       <workItem from="1638489873884" duration="30130000" />
       <workItem from="1638520962485" duration="14574000" />
       <workItem from="1638781006670" duration="39644000" />
+      <workItem from="1639096131432" duration="157000" />
+      <workItem from="1639096323637" duration="89000" />
     </task>
     <servers />
   </component>
@@ -201,9 +203,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="638" y="76" width="644" height="888" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639046904933" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1639040057048">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1639096160400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639040057048" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639096160400" />
   </component>
 </project>

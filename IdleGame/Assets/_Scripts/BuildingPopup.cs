@@ -68,6 +68,7 @@ public class BuildingPopup : Singleton<BuildingPopup>
     {
         currentLevel++;
         nextLevel++;
+        IncreaseIncome(ref selectedBuilding.income);
     }
 
     private void IncreasePrice(ref int price)
@@ -83,5 +84,10 @@ public class BuildingPopup : Singleton<BuildingPopup>
     private void ConvertToUI(int number, TMP_Text text)
     {
         text.text = number.ToString();            
+    }
+
+    private void IncreaseIncome(ref int income)
+    {
+        income *= 2;
     }
 }
